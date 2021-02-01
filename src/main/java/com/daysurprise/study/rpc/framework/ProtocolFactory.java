@@ -15,6 +15,7 @@ public class ProtocolFactory {
 
     public static Protocol getProtocol(){
         String protocolName = System.getProperty("protocol");
+        System.out.println("系统配置的协议类型:" + protocolName);
         if (StringUtils.isEmpty(protocolName)){
             return new HttpProtocol();
         }

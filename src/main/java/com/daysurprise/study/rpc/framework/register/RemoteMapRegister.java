@@ -13,7 +13,7 @@ import java.util.Map;
  * @Author: daysurprise
  * @Date: 2021/1/28
  * @Mote: 我于生命之中绽放, 犹如黎明中的花朵
- * @Desc: 远程注册接口的地址集合
+ * @Desc: 远程注册接口的地址集合 使用文件注册
  */
 public class RemoteMapRegister {
 

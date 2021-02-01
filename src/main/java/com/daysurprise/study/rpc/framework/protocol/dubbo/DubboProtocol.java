@@ -14,11 +14,13 @@ import com.daysurprise.study.rpc.framework.URL;
 public class DubboProtocol implements Protocol {
     @Override
     public void start(String hostname, Integer port) {
-
+        NettyServer nettyServer = new NettyServer();
+        nettyServer.start(hostname, port);
     }
 
     @Override
     public String send(URL url, Invocation invocation) {
-        return null;
+        NettyClient nettyClient = new NettyClient();
+        return nettyClient.send(url.getHostname(),url.getPort(),invocation);
     }
 }

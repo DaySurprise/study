@@ -1,6 +1,6 @@
 package com.daysurprise.study.rpc.framework;
 
-import com.daysurprise.study.rpc.framework.register.RemoteMapRegister;
+import com.daysurprise.study.rpc.framework.register.ZookeeperRegister;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -22,7 +22,7 @@ public class ProxyFactory<T> {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
                 Invocation invocation = new Invocation(interfaceClass.getName(),method.getName(), method.getParameterTypes(), args);
-                List<URL> urls = RemoteMapRegister.get(interfaceClass.getName());
+                List<URL> urls = ZookeeperRegister.get(interfaceClass.getName());
                 URL url = LoadBalance.random(urls);
                 Protocol protocol = ProtocolFactory.getProtocol();
                 String result = protocol.send(url,invocation);

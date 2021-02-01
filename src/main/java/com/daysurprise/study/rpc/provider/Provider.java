@@ -2,9 +2,9 @@ package com.daysurprise.study.rpc.provider;
 
 import com.daysurprise.study.rpc.framework.Protocol;
 import com.daysurprise.study.rpc.framework.ProtocolFactory;
-import com.daysurprise.study.rpc.framework.register.RemoteMapRegister;
 import com.daysurprise.study.rpc.framework.URL;
 import com.daysurprise.study.rpc.framework.register.LocalRegister;
+import com.daysurprise.study.rpc.framework.register.ZookeeperRegister;
 
 /**
  * @Class: com.daysurprise.study.rpc.provider.Provider
@@ -20,8 +20,12 @@ public class Provider {
         // 本地注册
         LocalRegister.regist(HelloService.class.getName(),HelloServiceImpl.class);
 
-        // 远程注册中心注册
-        RemoteMapRegister.regist(HelloService.class.getName(),new URL("localhost",8080));
+        // 本地文件注册-远程注册中心注册
+        //RemoteMapRegister.regist(HelloService.class.getName(),new URL("localhost",8080));
+
+        // zk注册
+        ZookeeperRegister.regist(HelloService.class.getName(), new URL("localhost", 8080));
+
 
         Protocol protocol = ProtocolFactory.getProtocol();
         protocol.start("localhost",8080);
