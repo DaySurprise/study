@@ -29,7 +29,7 @@ public class HttpServerHandler {
             Invocation invocation = (Invocation) objectInputStream.readObject();
 
             String interfaceName = invocation.getInterfaceName();
-
+            // 从本地提供者类注册中心获取对应的提供者实现类
             Class implClass = LocalRegister.get(interfaceName);
             Method method = implClass.getMethod(invocation.getMethodName(), invocation.getParamTypes());
             String result = (String) method.invoke(implClass.newInstance(), invocation.getParams());
