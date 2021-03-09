@@ -1,17 +1,16 @@
-package com.daysurprise.study.rpc.framework;
+package com.daysurprise.study.rpc2.framework;
 
-import com.daysurprise.study.rpc.framework.protocol.dubbo.DubboProtocol;
-import com.daysurprise.study.rpc.framework.protocol.http.HttpProtocol;
+import com.daysurprise.study.rpc2.framework.protocol.dubbo.DubboProtocol;
+import com.daysurprise.study.rpc2.framework.protocol.http.HttpProtocol;
 
 /**
- * @Class: com.daysurprise.study.rpc.framework.ProtocolFactory
+ * @Class: com.daysurprise.study.rpc2.framework.ProtocolFactory
  * @Author: daysurprise
- * @Date: 2021/1/28
+ * @Date: 2021/3/2
  * @Mote: 我于生命之中绽放, 犹如黎明中的花朵
- * @Desc: 协议工厂 根据配置返回对应的协议
+ * @Desc:
  */
 public class ProtocolFactory {
-
     public static Protocol getProtocol(){
         String protocolName = System.getProperty("protocol");
         System.out.println("系统配置的协议类型:" + protocolName);

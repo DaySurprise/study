@@ -1,6 +1,6 @@
-package com.daysurprise.study.rpc.framework.protocol.dubbo;
+package com.daysurprise.study.rpc2.framework.protocol.dubbo;
 
-import com.daysurprise.study.rpc.framework.Invocation;
+import com.daysurprise.study.rpc2.framework.Invocation;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
