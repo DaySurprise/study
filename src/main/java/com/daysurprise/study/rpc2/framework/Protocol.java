@@ -1,5 +1,4 @@
 package com.daysurprise.study.rpc2.framework;
-
 /**
  * @Class: com.daysurprise.study.rpc2.framework.Protocol
  * @Author: daysurprise
